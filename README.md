@@ -8,7 +8,7 @@
 This repo includes short programmes such as:
 
 - Generate Multiplication tables
-- Gregory–Leibniz π Approximation
+- *Gregory–Leibniz π Approximation*
 - ...
 - Greatest Common Dividor (GCD)
 
