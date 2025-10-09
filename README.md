@@ -1,14 +1,16 @@
 # Fun Math Programmes
 *A collection of small, educational Python scripts that explore interesting mathematical concepts through code*
 
+**note: all code is still subject to change.**
 
 ## Project Overview
 
 This repo includes short programmes such as:
 
+- Generate Multiplication tables
 - Gregory–Leibniz π Approximation
 - ...
-- Fibonacci Generator — explore recursion and sequence growth.
+- Greatest Common Dividor (GCD)
 
 **more to come obviously**
 
