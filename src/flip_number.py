@@ -22,6 +22,10 @@ def get_number():
     return str(n)
 
 def flip_number(n):
+	"""
+	Takes a number, assuming the input is a string version.
+	flips its round, and prints the result.
+	"""
     sign = False
     flipped = ""
     for i in range(len(n)-1, -1, -1):
