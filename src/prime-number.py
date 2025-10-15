@@ -8,28 +8,35 @@ source: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 
 def main():
     n = get_number()
-    print(n)
 
-    # prime_num = prime_number(n)
-    # print(prime_num)
+    prime_num = prime_number(n)
+    print(f"All prime numbers below {n} are:")
+    for i in prime_num:
+        print(f"{i}, ", end="")
+    print()
 
 
 def prime_number(n):
-    pass
-    # 1. Create a list of consecture integers from 2 through n: (2, 3, 4, ... n)
+    p = 2
+    # Create list of consecutive integers from 2 through n: (2, 3, 4, ... n)
+    L = []
+    for i in range(2, n+1):
+        L.append(i)
 
-    # 2. p = 2 -> smallest prime number
+    # Set smallest prime number
+    while True:
+        # 3. enumerate the multiples of p by couting in increments of p from 2p
+        L = enumerate(p, L)
 
-    # 3. enumearte the multiples of p by couting in increments of p from 2p to n
-    #    Mark them in a list without p (2p, 3p, 4p ...)
+        # 4. Find smallest number greater than p, that is not marked.
+        #.   if no such number, STOP else: p = new number
+        p = find_greater_num(p, L)
+        
+        if p is None or p >= n:
+            break
 
-    # 4. Find smallest number greater than p, that is not marked.
-    #    if no such number, STOP
-    #    else, let p = new number
+    return L
 
-    # 5.  repeat step 3. enumerate
-
-    # 6. When algortihmm terminates, the number remaining not marked in the list are all the primes below n.
 
 def get_number():
     while True:
@@ -42,5 +49,22 @@ def get_number():
         except ValueError:
             print("Please provide a positive integer.")
 
+def enumerate(p, L):
+    for i in L[:]:      # Create copy of the list, to avoid index issues
+        if i == p:
+            continue
+        elif i % p == 0:
+            L.remove(i)
+    return L
 
-main()
+def find_greater_num(p, L):
+    for i in L:
+        if i == p:
+            continue
+        elif i > p:
+            return i
+    return None
+
+
+if __name__ == '__main__':
+    main()
