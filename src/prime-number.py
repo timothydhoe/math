@@ -39,15 +39,16 @@ def prime_number(n):
 
 
 def get_number():
+    # TODO: DON'T ACCEPT NUMBER BELOW 2
     while True:
         try:
             user_num = int(input("Number: "))
-            if user_num <= 0:
-                print("Please provide a positive integer.")
+            if user_num <= 2:
+                print("Please provide a number bigger than 2.")
                 continue
             return user_num
         except ValueError:
-            print("Please provide a positive integer.")
+            print("Please provide a number bigger than 2.")
 
 def enumerate(p, L):
     for i in L[:]:      # Create copy of the list, to avoid index issues
