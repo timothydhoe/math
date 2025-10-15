@@ -7,7 +7,12 @@ source: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 """
 
 def main():
-    pass
+    n = get_number()
+    print(n)
+
+    # prime_num = prime_number(n)
+    # print(prime_num)
+
 
 def prime_number(n):
     pass
@@ -27,6 +32,15 @@ def prime_number(n):
     # 6. When algortihmm terminates, the number remaining not marked in the list are all the primes below n.
 
 def get_number():
-    pass
+    while True:
+        try:
+            user_num = int(input("Number: "))
+            if user_num <= 0:
+                print("Please provide a positive integer.")
+                continue
+            return user_num
+        except ValueError:
+            print("Please provide a positive integer.")
+
 
 main()
